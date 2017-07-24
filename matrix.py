@@ -29,10 +29,10 @@ for line in sys.stdin:
 rows = sorted(rows)
 columns = sorted(columns)
 
-print(min(minscore, maxscore), maxscore, sep = '\t')
+print(0.0, abs(minscore) + maxscore, sep = '\t')
 print('\t' + '\t'.join(columns))
 
 for cid in rows:
-	row = [str(rel['{}_{}'.format(cid,pid)]) for pid in columns]
+	row = ['{:.2f}'.format(abs(minscore) + rel['{}_{}'.format(cid,pid)]) for pid in columns]
 	print('{}\t{}'.format(cid, '\t'.join(row)))
 

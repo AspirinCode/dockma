@@ -15,8 +15,10 @@ pair = 'hot/pair.txt'
 
 exhaustiveness = 32
 
+max_box_size = 50.0
+
 maxscore = 0.0
-heatmap_scale_size = 100
+heatmap_scale_size = 200
 heatmap_title = 'heatmap'
 
 #parameter end

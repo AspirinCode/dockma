@@ -13,8 +13,8 @@ def colorscale(size = 10):
 	result = []
 	for i in range(size):
 		r = gauss(i,-2,xscale)
-		g = gauss(i,2,xscale)
-		b = gauss(i,4, xscale)
+		g = gauss(i,4,xscale)
+		b = gauss(i,6, xscale)
 		result.append('<tr><td width="50" bgcolor="#{:02x}{:02x}{:02x}"></td></tr>'.format(r,g,b))
 
 	return '<table cellspacing="0" cellpadding="0" height="500">\n{}\n</table>'.format('\n'.join(result))
@@ -24,11 +24,11 @@ def getcolor(score, mns, mxs, size = 10):
 
 	if score <= mxs:
 		if score >= mns:
-			i = size*(score + abs(mns))/(mxs - mns) - 1
+			i = size - (size-1)*(score + abs(mns))/(mxs - mns) - 1
 
 			r = gauss(i,-2,xscale)
-			g = gauss(i,2,xscale)
-			b = gauss(i,4, xscale)
+			g = gauss(i,4,xscale)
+			b = gauss(i,6, xscale)
 
 			return '#{:02x}{:02x}{:02x}'.format(r,g,b)
 		else:
@@ -38,8 +38,8 @@ def getcolor(score, mns, mxs, size = 10):
 
 
 def heatmap(columns, minscore, maxscore, size):
-	data = ['<table cellspacing="0" cellpassing="0" width="500" height="500">',
-		'<td/>' + ''.join(['<td>{}</td>'.format(c) for c in columns])]
+	data = ['<table cellspacing="0" cellpassing="0" height="500">',
+		''.join(['<td width="60" align="center">{}</td>'.format(c) for c in columns])]
 	for line in sys.stdin:
 		line = line.strip('\n').split('\t')
 		scores = [float(s) for s in line[1:]]
@@ -52,9 +52,12 @@ def heatmap(columns, minscore, maxscore, size):
 def title(p):
 	return p._('project.wizard.create.name') + '-heatmap'
 
+def positive_real(r):
+	return r if r != 0.0 else abs(r)
+
 def scorescale(mns, mxs, size):
 	step = (mxs -  mns)/10
-	data = ''.join(['<tr><td>{:.2f}</td></tr>'.format(mns + i*step) for i in range(10)])
+	data = ''.join(['<tr><td>{:.2f}</td></tr>'.format(positive_real(-(mns + i*step))) for i in range(10)])
 	return '<table height="500">{}</table>'.format(data)
 
 def html(columns, minscore, maxscore, size, title):
