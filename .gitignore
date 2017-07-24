@@ -1,0 +1,13 @@
+*.pyc
+waste.*
+*.pdbqt
+*.pdb
+*.out
+*.gpf
+*.dpf
+*.xyz
+*.fld
+*.map
+*.log
+*.txt
+*.pid
