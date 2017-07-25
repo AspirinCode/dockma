@@ -1,5 +1,5 @@
 import os
 
-def clean(pid):
-	os.system('rm -f ' + pid)
+def clean():
 	os.system('rm -f task/*')
+	os.system('rm -f log/*')

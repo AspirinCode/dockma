@@ -10,4 +10,4 @@ try:
 except OSError as e:
 	pass
 
-clean(pid)
+clean()

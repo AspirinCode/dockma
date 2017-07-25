@@ -3,6 +3,8 @@ import time
 import os
 import re
 
+from signal import SIGTERM
+
 class Screening(Daemon):
 	def __init__(self, 
 			user,
@@ -68,4 +70,16 @@ class Screening(Daemon):
 				break
 				
 	
-		self.stop()
+		self.kill()
+
+
+	def kill(self):
+		try:
+			id = int(open(self.pidfile).read().strip('\n'))
+			os.system('rm -f ' + self.pidfile)
+
+			os.kill(id, SIGTERM)
+		except OSError as e:
+			pass
+
+
