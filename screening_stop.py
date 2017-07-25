@@ -1,7 +1,8 @@
 from signal import SIGTERM
 import os
-from parameter import root,pid
 from screening_stop_after import clean
+
+pid = 'log/process.pid'
 
 try:
 	id = int(open(pid).read().strip('\n'))
@@ -9,4 +10,4 @@ try:
 except OSError as e:
 	pass
 
-clean(root, pid)
+clean('.', pid)

@@ -1,4 +1,10 @@
 from screening import Screening
-from parameter import pid, root, pair
+from parameter import *
 
-Screening(pid, root, pair).start()
+Screening(
+	user, 
+	project, 
+	pair, 
+	payload, 
+	runnies
+	).start()
