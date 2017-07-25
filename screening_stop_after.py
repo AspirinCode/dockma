@@ -1,4 +1,5 @@
 import os
 
-def clean(root, pid):
+def clean(pid):
 	os.system('rm -f ' + pid)
+	os.system('rm -f task/*')

@@ -13,4 +13,4 @@ vina --out hot/PID_CID/model.pdbqt --log hot/PID_CID/report.txt --receptor data/
 
 python extract_score.py hot/PID_CID
 
-rm task/PID_CID_docking.sbatch
+rm task/PROJECT_PID_CID_docking.sbatch

@@ -49,7 +49,7 @@ class Screening(Daemon):
 
 		dir = 'hot/{}_{}'.format(pid, cid)
 		if not os.path.isdir(dir):
-			task = self.template.replace('PID', pid).replace('CID',cid)
+			task = self.template.replace('PID', pid).replace('CID',cid).replace('PROJECT', self.project)
 			path = 'task/{}_{}_{}_docking.sbatch'.format(self.project,pid, cid)
 			open(path,'w').write(task)
 
