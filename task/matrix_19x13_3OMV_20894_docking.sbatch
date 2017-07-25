@@ -13,4 +13,4 @@ vina --out hot/3OMV_20894/model.pdbqt --log hot/3OMV_20894/report.txt --receptor
 
 python extract_score.py hot/3OMV_20894
 
-rm task/3OMV_20894_docking.sbatch
+rm task/matrix_19x13_3OMV_20894_docking.sbatch

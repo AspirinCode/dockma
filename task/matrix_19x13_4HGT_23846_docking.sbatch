@@ -13,4 +13,4 @@ vina --out hot/4HGT_23846/model.pdbqt --log hot/4HGT_23846/report.txt --receptor
 
 python extract_score.py hot/4HGT_23846
 
-rm task/4HGT_23846_docking.sbatch
+rm task/matrix_19x13_4HGT_23846_docking.sbatch

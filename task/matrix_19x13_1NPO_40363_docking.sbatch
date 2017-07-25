@@ -13,4 +13,4 @@ vina --out hot/1NPO_40363/model.pdbqt --log hot/1NPO_40363/report.txt --receptor
 
 python extract_score.py hot/1NPO_40363
 
-rm task/1NPO_40363_docking.sbatch
+rm task/matrix_19x13_1NPO_40363_docking.sbatch

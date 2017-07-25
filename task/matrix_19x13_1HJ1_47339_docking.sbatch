@@ -13,4 +13,4 @@ vina --out hot/1HJ1_47339/model.pdbqt --log hot/1HJ1_47339/report.txt --receptor
 
 python extract_score.py hot/1HJ1_47339
 
-rm task/1HJ1_47339_docking.sbatch
+rm task/matrix_19x13_1HJ1_47339_docking.sbatch

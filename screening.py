@@ -7,6 +7,7 @@ from signal import SIGTERM
 
 class Screening(Daemon):
 	def __init__(self, 
+			root,
 			user,
 			project,
 			pair,
@@ -16,7 +17,7 @@ class Screening(Daemon):
 		Daemon.__init__(
 				self, 
 				pidfile = 'log/process.pid', 
-				root = '.',
+				root = root,
 				stdout = 'log/stdout.txt',
 				stderr = 'log/stderr.txt')
 
@@ -65,13 +66,6 @@ class Screening(Daemon):
 			for line in open(self.pair):
 				pid, cid = line.strip('\n').split('\t')
 				self.process(pid, cid)
-
-			if not self.jCount('PD,R'):
-				break
-				
-	
-		self.kill()
-
 
 	def kill(self):
 		try:

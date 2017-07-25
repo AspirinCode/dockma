@@ -13,4 +13,4 @@ vina --out hot/2V5Y_32601/model.pdbqt --log hot/2V5Y_32601/report.txt --receptor
 
 python extract_score.py hot/2V5Y_32601
 
-rm task/2V5Y_32601_docking.sbatch
+rm task/matrix_19x13_2V5Y_32601_docking.sbatch

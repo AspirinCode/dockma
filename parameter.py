@@ -6,6 +6,7 @@ project = 'matrix_19x13'
 receptor_id_path = 'data/receptor.txt'
 ligand_id_path = 'data/ligand.txt'
 
+root = '.'
 pair = 'hot/pair.txt'
 
 exhaustiveness = 32

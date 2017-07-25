@@ -13,4 +13,4 @@ vina --out hot/4JP4_20716/model.pdbqt --log hot/4JP4_20716/report.txt --receptor
 
 python extract_score.py hot/4JP4_20716
 
-rm task/4JP4_20716_docking.sbatch
+rm task/matrix_19x13_4JP4_20716_docking.sbatch
